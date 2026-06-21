@@ -1,0 +1,190 @@
+body {
+    font-family: sans-serif;
+    background:
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        url("images.jpg");
+    /*背景を設定
+    ダウンロード画像＋薄く黒を重ねて見やすく
+    上下で同じ色を指定（グラデなし）*/
+    background-size: cover;
+    /*画像をページのサイズに合わせる*/
+    background-position: center;
+    /*画面の中央を基準*/
+    background-attachment: fixed;
+    /*スクロールしても動かない*/
+}
+
+h3 {
+    color:rgba(0,0,0,0.7);
+    text-align: center;
+    /*中央ぞろえ*/
+    margin: 10px 0;
+    /*余白*/
+    font-size: 28px;
+    background:  white;
+    display: block;
+    /*文字の下に箱を追加*/
+    padding: 10px 100px;
+    /*内側の余白*/
+    border-radius: 8px;
+    /*角を丸く*/
+    margin: 40px auto;
+    /*外側の余白*/
+    width: fit-content;
+    /*箱の幅を文字に合わせる*/
+}
+
+/*メニューボタン*/
+.menu {
+  margin-bottom: 20px;
+  margin-right: 40px;
+  text-align: right; /* 中央にしたいなら center */
+}
+.menu button {
+  font-size: 20px;
+  padding: 15px 40px;
+  background: #92c0ef;
+  border-radius: 8px;
+  cursor: pointer;
+  /*カーソルの形を指に変更*/
+  transition: all 0.2s ease;
+  /*アニメーションを0.2秒かけて実行*/
+}
+/*上にカーソルが乗った時*/
+.menu button:hover {
+  background: #94c5f6;
+  transform: translateY(-1px);
+  /*下にずらす*/
+}
+/*押されたときの処理*/
+.menu button:active {
+  transform: translateY(0);
+  /*元の位置に戻る*/
+}
+
+/* フォームカード */
+.form-card {
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 50px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,4);
+}
+
+.form-card input,
+.form-card textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+
+/* 一覧 */
+.beans-list {
+    list-style: none;
+    padding: 0;
+    max-width: 1400px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+
+/* ヘッダー */
+.bean-header {
+    display: flex;
+    /*横並び*/
+    justify-content: space-between;
+    /*間に空白*/
+    align-items: center;
+    /*縦方向中央ぞろえ*/
+}
+
+/* 名前 */
+.bean-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* 星 */
+.star-btn {
+    font-size: 30px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: gold;
+}
+
+/* 本文 */
+.bean-body p {
+    margin: 5px 0;
+}
+
+/* 画像 */
+.bean-img {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+input[type="submit"] {
+    display: block;
+    width: 100%;
+    background: #007BFF;
+    color: white;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px; 
+    cursor: pointer;
+}
+
+/* 削除ボタン */
+.delete-btn {
+    margin-top: 10px;
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/*下からふわっと表示する*/
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        /*最初は透明*/
+        transform: translateY(30px);
+        /*下に30ずらしておく*/
+    }
+    to {
+        opacity: 1;
+        /*見えるようにする*/
+        transform: translateY(0);
+        /*元の位置に戻る*/
+    }
+}
+
+/*カード*/
+.bean-card {
+    background: rgba(255,255,255,0.95);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,4);
+
+    animation: slideUp 0.6s ease-out;
+}
+
+/* スマホ対応 */
+@media (max-width: 700px) {
+    .beans-list {
+        grid-template-columns: 1fr;
+    }
+}

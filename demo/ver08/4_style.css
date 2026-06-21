@@ -1,0 +1,42 @@
+body {
+    font-family: sans-serif;
+    background: #222;
+    color: white;
+    text-align: center;
+}
+.gameArea {
+    position: relative; 
+    /* 子要素（.word）の絶対配置の基準にする */
+    width: 800px;
+    height: 200px;
+    /* processingにおけるsize(); */
+    margin: 50px auto;
+    border: 2px solid white;
+    /* 白い枠線 */
+    overflow: hidden;
+    /* はみ出した要素（文字など）を隠す */
+    background: #111;
+}
+
+.word {
+    position: absolute;
+    /* 親（.gameArea）を基準に自由に配置 */
+    top: 80px;
+    /* 上から80pxの位置 */
+    left: 800px;
+    /* 右端の外側からスタート（横幅と同じ値） */
+    font-size: 32px;
+    white-space: nowrap;
+    /* 改行させず横一列に表示 */
+}
+
+.input {
+    margin-top: 20px;
+    font-size: 24px;
+    padding: 10px;
+    width: 400px;
+}
+
+.info {
+    margin-top: 20px;
+}

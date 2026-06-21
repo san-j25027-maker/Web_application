@@ -1,0 +1,78 @@
+body {
+    font-family: sans-serif;
+    background: url("images3.png");
+    color: white;
+    text-align: center;
+}
+
+#word {
+    font-size: 32px;
+    margin: 20px;
+}
+
+.correct { color: blue; }
+.remaining { color: rgb(255, 255, 255); }
+.miss{ color: rgb(255, 0, 0); }
+
+#status {
+    margin-top: 10px;
+    font-size: 18px;
+}
+.gameArea {
+    position: relative; 
+    /* 子要素（.word）の絶対配置の基準にする */
+    width: 800px;
+    height: 200px;
+    /* processingにおけるsize(); */
+    margin: 50px auto;
+    border: 2px solid white;
+    /* 白い枠線 */
+    overflow: hidden;
+    /* はみ出した要素（文字など）を隠す */
+    background: #111;
+}
+
+.word {
+    position: absolute;
+    /* 親（.gameArea）を基準に自由に配置 */
+    top: 80px;
+    /* 上から80pxの位置 */
+    left: 800px;
+    /* 右端の外側からスタート（横幅と同じ値） */
+    font-size: 32px;
+    white-space: nowrap;
+    /* 改行させず横一列に表示 */
+}
+
+.input {
+    margin-top: 20px;
+    font-size: 24px;
+    padding: 10px;
+    width: 400px;
+}
+
+.info {
+    margin-top: 20px;
+}
+/* コーヒーカップ 表示エリア */
+#caffeineCups {
+    display: flex;          /* 横並び */
+    gap: 5px;               /* 間隔 */
+    
+    position: fixed;        /* 画面に固定 */
+    bottom: 50px;           /* 画面下から10px */
+    left: 10%;              /* 横中央に配置 */
+    z-index: 1000;          /* 他の要素より前に表示 */
+}
+
+/* カップ */
+.cup {
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+}
+
+/* 表示 */
+.cup.active {
+    opacity: 1;
+}

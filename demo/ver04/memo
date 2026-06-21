@@ -1,0 +1,17 @@
+データベースの内容
+/*「済んだ」ボタンを押したときの処理
+    if(isset($_POST["method"]) && $_POST["method"] === "put") {
+        $id = $_POST["id"];
+        $id = htmlspecialchars($id,ENT_QUOTES);
+        //フォームから送られてきたIDは文字列型になっているので直す
+        $id = (int)$id;
+        //データベースへの接続
+        $dbh = db_connect();
+        $sql = "UPDATE tasks SET done = 1 WHERE id = ?";
+        $stmt = $dbh->prepare($sql);
+
+        $stmt->bindValue(1,$id,PDO::PARAM_INT);
+        $stmt -> execute();
+        $dbh = null;
+    }
+*/
